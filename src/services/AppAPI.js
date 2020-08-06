@@ -1,14 +1,9 @@
-import React from 'react';
-import { fetchReasons } from './ReasonsService';
+const getDataFromApi = () => {
+    return fetch('https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json')
+        .then(response => response.json())
+        .then(data => {
+            return data.results;
+        });
+};
 
-class AppRoot extends React.Component {
-    fetchNewReasons() {
-        fetchReasons()
-            .then(data => {
-                this.setState({
-                    reasonsStore: data.reasons
-                });
-            });
-    }
-}
-export default AppRoot;
+export default getDataFromApi;
