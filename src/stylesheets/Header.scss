@@ -1,9 +1,9 @@
 @import './commons/vars'; 
 
 .DivHeader{
-    height: 20vh;
-    color: $color-ligth;
-    font-size: 40px;
-    text-align: center;
-    padding-top: 50px;
+    height: 30vh;
+    background-image: url(../images/LogoRickandMorty.png);
+    background-repeat: no-repeat;
+    background-position: center;  
+    
 }

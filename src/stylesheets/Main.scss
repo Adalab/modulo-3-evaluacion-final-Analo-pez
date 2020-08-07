@@ -22,6 +22,13 @@
 .card {
     background-color: $color-ligth;
     margin: 20px;
+    &__content {
+        text-align: center;
+    }
+    &__img2 {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
 }
 
 .Alert{
@@ -32,19 +39,12 @@
         justify-content: center;
 
         &__dialog {
-            border: 1px solid red;
-            background-color: $color-ligth;
+            border-radius: 10px;
+            border: 3px solid rgb(63, 207, 70) ;
+            background-color: rgb(40, 170, 187);
             display: inline-block;
         }
-        &__content{
-        
-    }
-    &__title{
-       
-    }
-    &__dialog {
-        
-    }
+   
 }
 
 .episodeList {

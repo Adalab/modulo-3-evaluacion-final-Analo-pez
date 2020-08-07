@@ -3,7 +3,7 @@ import '../stylesheets/Header.scss';
 
 function Header() {
     return (
-        <div className="DivHeader">Rick and Morty</div>
+        <div className="DivHeader"></div>
     );
 }
 

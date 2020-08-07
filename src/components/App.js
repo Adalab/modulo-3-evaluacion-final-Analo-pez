@@ -36,7 +36,7 @@ const App = () => {
           name={character.name}
           species={character.species}
           planet={character.origin.name}
-          // episode={character.episode}
+          episode={character.episode}
           status={character.status}
         />
       );
