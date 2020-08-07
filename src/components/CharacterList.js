@@ -5,6 +5,7 @@ const CharacterList = props => {
     const htmlCode = props.characters.map((character, index) => {
         return <CharacterCard
             key={index}
+            id={character.id}
             image={character.image}
             name={character.name}
             species={character.species} />

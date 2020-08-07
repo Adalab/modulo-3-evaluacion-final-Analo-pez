@@ -13,6 +13,7 @@ const Filters = props => {
         <form className="filter">
             <label className="filter__label">Encuentra tu personaje</label>
             <input className="filter__input"
+                type="text"
                 id="filterName"
                 value={props.filterName}
                 onChange={handleFilterName}></input>
