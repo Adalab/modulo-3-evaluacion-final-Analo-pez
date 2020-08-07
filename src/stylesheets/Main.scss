@@ -28,19 +28,26 @@
     background-color: $color-ligth;
 }
 .modal{
-    border: 1px solid green;
-    background-color: $color-ligth;
-    color:violet;
-    &__dialog {
-        border: 1px solid red;
-    }
-    &__content{
-        background-color: red;
+        display: flex;
+        justify-content: center;
+
+        &__dialog {
+            border: 1px solid red;
+            background-color: $color-ligth;
+            display: inline-block;
+        }
+        &__content{
+        
     }
     &__title{
-        background-color: red;
+       
     }
     &__dialog {
-        background-color: red;
+        
     }
+}
+
+.episodeList {
+    display: flex;
+    flex-direction: column;
 }

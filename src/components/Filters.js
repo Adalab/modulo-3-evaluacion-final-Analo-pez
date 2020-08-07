@@ -7,10 +7,14 @@ const Filters = props => {
             key: 'filterName',
             value: ev.target.value
         });
+    }
+    const handlePreventClick = ev => {
+        ev.preventDefault();
     };
+
     return (
 
-        <form className="filter">
+        <form className="filter" onClick={handlePreventClick}>
             <label className="filter__label">Encuentra tu personaje</label>
             <input className="filter__input"
                 type="text"

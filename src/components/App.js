@@ -10,7 +10,7 @@ import { Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
-  const [filterName, setFilterName] = useState('');
+  const [filterName, setFilterName] = useState('Rick');
 
 
   useEffect(
@@ -28,15 +28,15 @@ const App = () => {
 
   const renderCharacterDetail = props => {
     const routeCharacterId = props.match.params.id;
-    const character = characters.find(character => character.id === routeCharacterId);
+    const character = characters.find(character => character.id == routeCharacterId);
     if (character) {
       return (
         < CharacterDetail
-          image={character.name}
+          image={character.image}
           name={character.name}
           species={character.species}
           planet={character.origin.name}
-          espisode={character.episode}
+          // episode={character.episode}
           status={character.status}
         />
       );
@@ -44,6 +44,8 @@ const App = () => {
       return <p className="Alert">Personaje no encontrado</p>
     }
   };
+
+
   const renderFilteredCharacters = () => {
     return characters.filter(character => {
       return character.name.includes(filterName);
@@ -52,13 +54,13 @@ const App = () => {
 
 
   return (
-    <div className="App ">
+    <div className="App " >
       <Header />
-      <Filters
-        filterName={filterName}
-        handleFilters={handleFilters} />
       <Switch>
         <Route exact path="/">
+          <Filters
+            filterName={filterName}
+            handleFilters={handleFilters} />
           <CharacterList characters={renderFilteredCharacters()} />
         </Route>
         <Route path="/character/:id" render={renderCharacterDetail} />
