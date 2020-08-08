@@ -40,15 +40,13 @@ const App = () => {
           status={character.status}
         />
       );
-    } else {
-      return <p className="Alert">Personaje no encontrado</p>
     }
   };
 
 
   const renderFilteredCharacters = () => {
     return characters.filter(character => {
-      return character.name.includes(filterName);
+      return character.name.toLowerCase().includes(filterName.toLowerCase());
     });
   }
 

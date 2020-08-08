@@ -14,7 +14,7 @@ const Filters = props => {
 
     return (
 
-        <form className="filter" onClick={handlePreventClick}>
+        <form className="filter" onSubmit={handlePreventClick}>
             <label className="filter__label">Encuentra tu personaje</label>
             <input className="filter__input"
                 type="text"

@@ -2,8 +2,15 @@
 
 .DivHeader{
     height: 30vh;
-    background-image: url(../images/LogoRickandMorty.png);
+    background-image: url(../images/Rick_and_Morty_hero.jpeg);
     background-repeat: no-repeat;
-    background-position: center;  
+    background-position: center; 
+    margin-bottom: 30px; 
+    @media all and (min-width: 768px) {
+        background-image: url(../images/LogoRickandMorty.png);
+        background-repeat: no-repeat;
+        background-position: center;  
+        
+    }
     
 }
