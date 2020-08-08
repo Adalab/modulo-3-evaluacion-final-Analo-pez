@@ -5,7 +5,8 @@ import '../stylesheets/Main.scss';
 const CharacterDetail = props => {
 
     return (
-        <Link to="/">
+        <>
+            <nav className="rtn"><Link to="/"><span>Volver</span> </Link ></nav>
             <div className="modal" id={props.id}>
                 <div className="modal__dialog">
                     <div className="modal__content" >
@@ -22,7 +23,7 @@ const CharacterDetail = props => {
                     </div>
                 </div>
             </div>
-        </Link >
+        </>
     );
 };
 
