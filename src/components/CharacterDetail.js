@@ -7,7 +7,7 @@ const CharacterDetail = props => {
     return (
         <>
             <nav className="rtn"><Link to="/"><span>Volver</span> </Link ></nav>
-            <div className="modal" id={props.id}>
+            <div className="modal" >
                 <div className="modal__dialog">
                     <div className="modal__content" >
                         <section>
