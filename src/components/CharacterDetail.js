@@ -8,8 +8,8 @@ const CharacterDetail = props => {
         <>
             <nav className="rtn"><Link to="/"><span>Volver</span> </Link ></nav>
             <div className="modal" >
-                <div className="modal__dialog">
-                    <div className="modal__content" >
+                <div className="modal__content">
+                    <div >
                         <section>
                             <img className="card__img2" src={props.image} alt={props.name} />
                             <h2 className="card__content">{props.name}</h2>

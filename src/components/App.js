@@ -27,8 +27,8 @@ const App = () => {
   }
 
   const renderCharacterDetail = props => {
-    const routeCharacterId = props.match.params.id;
-    const character = characters.find(character => character.id == routeCharacterId);
+    const routeCharacterId = parseInt(props.match.params.id);
+    const character = characters.find(character => character.id === routeCharacterId);
     if (character) {
       return (
         < CharacterDetail
@@ -49,6 +49,7 @@ const App = () => {
       return character.name.toLowerCase().includes(filterName.toLowerCase());
     });
   }
+
 
   return (
     <div className="App " >
