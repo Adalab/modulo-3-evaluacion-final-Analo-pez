@@ -33,8 +33,13 @@
 }
 
 .Alert{
-    background-color: $color-ligth;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-ligth;
+    margin-top: 30px;
+    border: 3px solid rgb(63, 207, 70) ;
 }
+
 .modal{
         display: flex;
         justify-content: center;
