@@ -2,9 +2,15 @@ import React from 'react';
 import '../stylesheets/Main.scss';
 
 const Filters = props => {
-    const handleFilterName = ev => {
-        props.handleFilters({
+    const handleInputChangeName = ev => {
+        props.handleFilterName({
             key: 'filterName',
+            value: ev.target.value
+        });
+    }
+    const handleInputChangeLocation = ev => {
+        props.handleFilterLocation({
+            key: 'filterLocation',
             value: ev.target.value
         });
     }
@@ -17,10 +23,17 @@ const Filters = props => {
         <form className="filter" onSubmit={handlePreventClick}>
             <label className="filter__label">Encuentra tu personaje</label>
             <input className="filter__input"
+                placeholder="Buscar por nombre"
                 type="text"
                 id="filterName"
                 value={props.filterName}
-                onChange={handleFilterName}></input>
+                onChange={handleInputChangeName}></input>
+            <input className="filter__input"
+                placeholder="Buscar por localización"
+                type="text"
+                id="filterLocation"
+                value={props.filterLocation}
+                onChange={handleInputChangeLocation}></input>
         </form>
 
     );

@@ -10,7 +10,9 @@ import { Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
-  const [filterName, setFilterName] = useState('Rick');
+  const [filterName, setFilterName] = useState('');
+  const [filterLocation, setFilterLocation] = useState("");
+
 
 
   useEffect(
@@ -20,10 +22,11 @@ const App = () => {
       });
     }, []);
 
-  const handleFilters = data => {
-    if (data.key === 'filterName') {
-      setFilterName(data.value);
-    }
+  const handleFilterName = data => {
+    setFilterName(data.value);
+  }
+  const handleFilterLocation = data => {
+    setFilterLocation(data.value);
   }
 
   const renderCharacterDetail = props => {
@@ -44,11 +47,12 @@ const App = () => {
   };
 
 
-  const renderFilteredCharacters = () => {
-    return characters.filter(character => {
-      return character.name.toLowerCase().includes(filterName.toLowerCase());
-    });
-  }
+  const filterCharacters = characters.filter(character => {
+    return character.name.toLowerCase().includes(filterName.toLowerCase())
+  }).filter(character => {
+    return character.location.name.toLowerCase().includes(filterLocation.toLowerCase())
+  })
+
 
 
   return (
@@ -58,8 +62,11 @@ const App = () => {
         <Route exact path="/">
           <Filters
             filterName={filterName}
-            handleFilters={handleFilters} />
-          <CharacterList characters={renderFilteredCharacters()} />
+            handleFilterName={handleFilterName}
+            filterLocation={filterLocation}
+            handleFilterLocation={handleFilterLocation}
+          />
+          <CharacterList characters={filterCharacters} />
         </Route>
         <Route path="/character/:id" render={renderCharacterDetail} />
       </Switch>
